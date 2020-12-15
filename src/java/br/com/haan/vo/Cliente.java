@@ -34,7 +34,6 @@ public class Cliente implements Serializable{
     private String cidade;
     private String uf;
     private String status;
-    private String titutloEleitor;
 
     public String getStatus() {
         return status;

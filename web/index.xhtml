@@ -2,21 +2,67 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Aula bean</title>
     </h:head>
     <h:body>
-        Nome é :
-        <h:outputLabel id="cont" value="#{testeBean.texto} #{testeBean.contador}" />
-        <h:form>
-            <h:commandButton value="Incrementar ..." 
-                             actionListener="#{testeBean.incrementarContador()}">
-                <f:ajax render=":cont" />
-            </h:commandButton>
-                      
-                             
+        <div style="text-align:center;">
+            <img src="data:image/png;base64,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" />
+        </div>
+        <h:form>  
+            <p:menubar>
+                <p:submenu label="Cadastrar" icon="pi pi-file">
+
+                    <p:menuitem value="Disco" url="#" />
+                    <p:menuitem value="Artista" url="#" />
+                    <p:menuitem value="Cliente" url="#" />
+                    <p:separator />
+                    <p:menuitem value="Usuario" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Edit" icon="pi pi-pencil">
+                    <p:menuitem value="Undo" url="#" icon="pi pi-angle-double-left" />
+                    <p:menuitem value="Redo" url="#" icon="pi pi-angle-double-right" />
+                </p:submenu>
+
+                <p:submenu label="Help" icon="pi pi-question">
+                    <p:menuitem value="Contents" url="#" />
+                    <p:submenu label="Search" icon="pi pi-search">
+                        <p:submenu label="Text">
+                            <p:menuitem value="Workspace" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="File" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+                <p:menuitem value="Quit" url="http://www.primefaces.org" icon="pi pi-times" />
+
+                <f:facet name="options">
+                    <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+                    <p:commandButton type="button" value="Logout" icon="pi pi-home" />
+                </f:facet>
+            </p:menubar>
+
+            <div class="ui-g">
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+                <div class="ui-g-1">1</div>
+            </div>
+
         </h:form>
+
+
     </h:body>
 </html>
 
