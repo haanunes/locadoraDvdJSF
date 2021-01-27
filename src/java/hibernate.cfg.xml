@@ -52,5 +52,7 @@ Contributor(s):
     <mapping class="br.com.haan.vo.Disco"/>
     <mapping class="br.com.haan.vo.ItemAluguel"/>
     <mapping class="br.com.haan.vo.Usuario"/>
+    <mapping class="br.com.haan.vo.Permissao"/>
+    <mapping class="br.com.haan.vo.UsuarioPermissao"/>
   </session-factory>
 </hibernate-configuration>

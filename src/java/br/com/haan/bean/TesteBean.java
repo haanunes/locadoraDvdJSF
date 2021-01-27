@@ -17,7 +17,7 @@ import javax.faces.bean.ViewScoped;
  * @author Helder
  */
 @ManagedBean
-@ApplicationScoped
+@ViewScoped
 public class TesteBean implements Serializable{
     private String texto="Hélder";
     private int contador =0;
